@@ -1,0 +1,63 @@
+main, form, .campo {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    min-height: 100vh;
+    padding-inline: 3%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #f0f8ff;
+    color: #59429d;
+    font-family: sans-serif;
+}
+
+.campo-text {
+    text-align: center;
+}
+
+.campo-text .titulo, .subtitulo {
+    color: #380861;
+}
+
+form {
+    gap: 15px;
+}
+
+fieldset {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+input, select, textarea, .btn {
+    padding: 3px;
+    border-radius: 5px;
+    border: solid 1px #59429d;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+.campo input:focus, select:focus, textarea:focus {
+    background-color: #efeff5;
+}
+
+select {
+    align-self: flex-start;
+}
+
+.campo textarea {
+    resize: none;
+}
+
+.btn {
+    align-self: center;
+    background-color: #59429d;
+    color: white;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #7d66c1;
+}
