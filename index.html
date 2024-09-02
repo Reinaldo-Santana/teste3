@@ -2,7 +2,7 @@
 <html lang="Pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <title>Formulário de cadastro</title>
 
     <link rel="shortcut icon" href="./src/images/favicon.ico" type="image/x-icon">
@@ -48,7 +48,7 @@
             <div class="campo">
                 <label for="senioridade">Senioridade</label>
                 <select id="senioridade" name="senioridade">
-                    <option value="" selected disabled>Selecione</option>
+                    <option value="">Selecione</option>
                     <option value="Júnior">Júnior</option>
                     <option value="Pleno">Pleno</option>
                     <option value="Senior">Senior</option>
@@ -72,7 +72,7 @@
 
             <div class="campo">
                 <label>Conte um pouco da sua experiência<strong>:</strong></label>
-                <textarea name="experiencia" id="experiencia" rows="6"></textarea>
+                <textarea rows="6" maxlength="320" name="experiencia" id="experiencia" required></textarea>
             </div>
 
             <button class="btn" type="submit">Concluído</button>
