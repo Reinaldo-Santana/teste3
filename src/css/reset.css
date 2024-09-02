@@ -55,7 +55,3 @@ input[type="checkbox"]::before {
 input[type="radio"]:checked::before, input[type="checkbox"]:checked:before {
     opacity: 1;
 }
-
-option:hover {
-    background-color: #7d66c1;
-}
