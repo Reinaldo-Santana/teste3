@@ -56,12 +56,18 @@ select option:first-child {
 }
 
 .btn {
+	padding: 5px 15px;
+	border-radius: 6px;
     align-self: center;
-    background-color: #59429d;
-    color: white;
-    transition: 0.3s ease-in-out;
+	background: linear-gradient(to bottom, #a370cd 5%, #59429d 100%);
+	color:#ffffff;
+	border: 1px solid #c584f3;
     cursor: pointer;
 }
 .btn:hover {
-    background-color: #7d66c1;
+    background:linear-gradient(to bottom, #59429d 5%, #cba6e9 100%);
+}
+.btn:active {
+	position:relative;
+	top: 1px;
 }
