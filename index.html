@@ -21,17 +21,17 @@
             <fieldset>
                 <div class="campo">
                     <label for="nome">Nome</label>
-                    <input id="nome" type="text" name="nome" placeholder="Digite seu nome" required>
+                    <input id="nome" type="text" name="nome" placeholder="Digite seu nome" pattern="[a-zA-Z\s]*" required>
                 </div>
                 <div class="campo">
                     <label for="sobrenome">Sobrenome</label>
-                    <input id="sobrenome" type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                    <input id="sobrenome" type="text" name="sobrenome" placeholder="Digite seu sobrenome" pattern="[a-zA-Z\s]*" required>
                 </div>
             </fieldset>
 
             <div class="campo">
                 <label for="e-mail">E-mail</label>
-                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" required>
+                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" title="Preencha com o seu melhor email" required>
             </div>
 
             <div>
@@ -47,7 +47,7 @@
 
             <div class="campo">
                 <label for="senioridade">Senioridade</label>
-                <select id="senioridade" name="senioridade">
+                <select id="senioridade" name="senioridade" required>
                     <option value="">Selecione</option>
                     <option value="Júnior">Júnior</option>
                     <option value="Pleno">Pleno</option>
@@ -78,5 +78,7 @@
             <button class="btn" type="submit">Concluído</button>
         </form>
     </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>
