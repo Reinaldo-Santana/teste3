@@ -59,6 +59,7 @@ textarea:focus, textarea:valid {
 select {
     align-self: flex-start;
     transition: 0.2s ease-in-out;
+    background-color: none;
 }
 
 .campo textarea {
@@ -79,7 +80,7 @@ select option:first-child {
     cursor: pointer;
 }
 .btn:hover {
-    background:linear-gradient(to bottom, #59429d 5%, #cba6e9 100%);
+    background: linear-gradient(to bottom, #59429d 5%, #cba6e9 100%);
 }
 .btn:active {
 	position:relative;
