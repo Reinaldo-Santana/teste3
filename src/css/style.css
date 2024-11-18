@@ -51,7 +51,7 @@ input, select, textarea, .btn {
 }
 
 input:focus, input:valid,
-select:hover, select:focus, select:valid,
+select:focus, select:valid,
 textarea:focus, textarea:valid {
     background-color: #E8F0FE;
 }
