@@ -58,8 +58,8 @@ textarea:focus, textarea:valid {
 
 select {
     align-self: flex-start;
-    transition: 0.2s ease-in-out;
     background-color: #ffffff;
+    transition: 0.2s ease-in-out;
 }
 
 .campo textarea {
