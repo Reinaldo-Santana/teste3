@@ -6,10 +6,6 @@
     outline: none;
 }
 
-fieldset {
-    border: none;
-}
-
 input[type="radio"] {
     appearance: none;
     border: solid 1px #7d66c1;

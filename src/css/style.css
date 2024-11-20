@@ -46,11 +46,6 @@ input[type="email"]:invalid:not(:placeholder-shown):not(:focus) {
     color: var(--red);
 }
 
-fieldset {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
 
 input, select, textarea {
     padding: 3px;
@@ -59,25 +54,41 @@ input, select, textarea {
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
-input:focus, input:valid,
-select:focus, select:valid,
-textarea:focus, textarea:valid {
+input:is(:focus, :valid),
+select:is(:focus, :valid),
+textarea:is(:focus, :valid) {
     background-color: #E8F0FE;
     transition: 0.3s ease-in-out;
 }
 
+fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 select {
     align-self: flex-start;
-    background-color: #ffffff;
     transition: 0.2s ease-in-out;
+}
+select:hover {
+    background-color: #E8F0FE;
+}
+
+select option[value=""] {
+    display: none;
+}
+
+.senioridade {
+    align-self: flex-start;
+}
+
+select option:hover {
+    background-color: rebeccapurple;
 }
 
 .campo textarea {
     resize: none;
-}
-
-select option:first-child {
-    display: none;
 }
 
 .erro {
