@@ -57,7 +57,7 @@ input, select, textarea {
 input:is(:focus, :valid),
 select:is(:focus, :valid),
 textarea:is(:focus, :valid) {
-    background-color: #E8F0FE;
+    background-color: var(--focus);
     transition: 0.3s ease-in-out;
 }
 
@@ -69,10 +69,11 @@ fieldset {
 
 select {
     align-self: flex-start;
+    background-color: #ffffff;
     transition: 0.2s ease-in-out;
 }
 select:hover {
-    background-color: #E8F0FE;
+    background-color: var(--focus);
 }
 
 select option[value=""] {
