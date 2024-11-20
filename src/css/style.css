@@ -10,7 +10,7 @@ main {
     justify-content: center;
     gap: 20px;
     background-color: #f0f8ff;
-    color: #59429d;
+    color: var(--standard-color);
     font-family: sans-serif;
 }
 
@@ -31,10 +31,19 @@ form {
     50% { transform: translateX(-4px);}
     75% { transform: translateX(4px);}
 }
-
-input:invalid:not(:placeholder-shown):not(input[type="email"]) {
+input:invalid:not(:placeholder-shown):not(input[type="email"]):not(:autofill),
+input[type="email"]:invalid:not(:placeholder-shown):not(:focus) {
     animation: shake 300ms;
-    color: red;
+    background-color: #ffffff;
+    color: var(--red);
+    border-color: var(--red);
+}
+
+.campo:has(
+    input:invalid:not(:placeholder-shown):not(input[type="email"]):not(:autofill),
+    input[type="email"]:invalid:not(:placeholder-shown):not(:focus)
+) label {
+    color: var(--red);
 }
 
 fieldset {
@@ -43,10 +52,10 @@ fieldset {
     flex-wrap: wrap;
 }
 
-input, select, textarea, .btn {
+input, select, textarea {
     padding: 3px;
     border-radius: 5px;
-    border: solid 1px #59429d;
+    border: solid 1px var(--standard-color);
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
@@ -54,6 +63,7 @@ input:focus, input:valid,
 select:focus, select:valid,
 textarea:focus, textarea:valid {
     background-color: #E8F0FE;
+    transition: 0.3s ease-in-out;
 }
 
 select {
@@ -70,17 +80,21 @@ select option:first-child {
     display: none;
 }
 
+.erro {
+    color: var(--red);
+}
+
 .btn {
 	padding: 5px 15px;
 	border-radius: 6px;
     align-self: center;
-	background: linear-gradient(to bottom, #a370cd 5%, #59429d 100%);
+	background: linear-gradient(to bottom, #a370cd 5%, var(--standard-color) 100%);
 	color:#ffffff;
 	border: 1px solid #c584f3;
     cursor: pointer;
 }
 .btn:hover {
-    background: linear-gradient(to bottom, #59429d 5%, #cba6e9 100%);
+    background: linear-gradient(to bottom, var(--standard-color) 5%, #cba6e9 100%);
 }
 .btn:active {
 	position:relative;

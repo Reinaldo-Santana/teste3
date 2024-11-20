@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./src/images/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/variables.css">
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
@@ -17,7 +18,7 @@
             <p class="subtitulo">Complete suas informações</p>
         </div>
 
-        <form action="./index.html" method="get">
+        <form id="formulario" action="./index.html" method="get">
             <fieldset>
                 <div class="campo">
                     <label for="nome">Nome</label>
@@ -31,7 +32,7 @@
 
             <div class="campo">
                 <label for="e-mail">E-mail</label>
-                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" title="Preencha com o seu melhor email" required>
+                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" required>
             </div>
 
             <div>
@@ -57,6 +58,8 @@
 
             <div>
                 <label>Selecione as tecnologias que você utiliza<strong>:</strong></label><br><br>
+
+                <div id="erro" class="erro"></div>
                 
                 <input id="html" type="checkbox" name="tecnologias">
                 <label for="html">HTML</label>
@@ -78,5 +81,7 @@
             <button class="btn" type="submit">Concluído</button>
         </form>
     </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>
