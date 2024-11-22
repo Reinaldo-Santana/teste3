@@ -14,6 +14,13 @@ main {
     font-family: sans-serif;
 }
 
+.keyboard-navigation :is(
+    input[type="radio"], input[type="checkbox"], .btn, select
+):focus {
+    outline: 2px solid var(--standard-color);
+    outline-offset: 1.5px;
+}
+
 .campo-text {
     text-align: center;
 }
@@ -46,9 +53,17 @@ input[type="email"]:invalid:not(:placeholder-shown):not(:focus) {
     color: var(--red);
 }
 
-input:is(:focus, :valid),
+/* ANTES */
+
+/* input:is(:focus, :valid),
 select:is(:focus, :valid),
 textarea:is(:focus, :valid) {
+    background-color: var(--focus);
+    transition: 0.3s ease-in-out;
+} */
+
+/* DEPOIS */
+:is(input, select, textarea):is(:focus, :valid) {
     background-color: var(--focus);
     transition: 0.3s ease-in-out;
 }
