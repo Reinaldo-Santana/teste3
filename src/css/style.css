@@ -104,6 +104,8 @@ select option:hover {
 
 .campo textarea {
     resize: none;
+    font-size: 12pt;
+    font-family: Arial, sans-serif;
 }
 
 .erro {
@@ -118,6 +120,9 @@ select option:hover {
 	color:#ffffff;
 	border: 1px solid #c584f3;
     cursor: pointer;
+    pointer-events: none;
+    transition: 0.3s ease;
+    opacity: 0.2;
 }
 .btn:hover {
     background: linear-gradient(to bottom, var(--standard-color) 5%, #cba6e9 100%);
@@ -125,4 +130,9 @@ select option:hover {
 .btn:active {
 	position:relative;
 	top: 1px;
+}
+
+form:valid .btn {
+    pointer-events: auto;
+    opacity: 1;
 }

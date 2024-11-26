@@ -22,17 +22,17 @@
             <fieldset>
                 <div class="campo">
                     <label for="nome">Nome</label>
-                    <input id="nome" type="text" name="nome" placeholder="Digite seu nome" pattern="[a-zA-Z\s]*" required>
+                    <input id="nome" type="text" name="nome" autofocus placeholder="Digite seu nome" pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="20" required aria-required="true">
                 </div>
                 <div class="campo">
                     <label for="sobrenome">Sobrenome</label>
-                    <input id="sobrenome" type="text" name="sobrenome" placeholder="Digite seu sobrenome" pattern="[a-zA-Z\s]*" required>
+                    <input id="sobrenome" type="text" name="sobrenome" placeholder="Digite seu sobrenome" pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="40" required aria-required="true">
                 </div>
             </fieldset>
 
             <div class="campo">
                 <label for="e-mail">E-mail</label>
-                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" required>
+                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" maxlength="254" required aria-required="true">
             </div>
 
             <div>
@@ -48,7 +48,7 @@
 
             <div class="campo senioridade">
                 <label for="senioridade">Senioridade</label>
-                <select id="senioridade" name="senioridade" required>
+                <select id="senioridade" name="senioridade" required aria-required="true">
                     <option value="" disabled selected>Selecione</option>
                     <option value="Júnior">Júnior</option>
                     <option value="Pleno">Pleno</option>
@@ -74,8 +74,8 @@
             </div>
 
             <div class="campo">
-                <label>Conte um pouco da sua experiência<strong>:</strong></label>
-                <textarea rows="6" maxlength="320" name="experiencia" id="experiencia" required></textarea>
+                <label for="experiencia">Conte um pouco da sua experiência<strong>:</strong></label>
+                <textarea rows="6" maxlength="500" name="experiencia" id="experiencia" required aria-required="true"></textarea>
             </div>
 
             <button class="btn" type="submit">Concluído</button>

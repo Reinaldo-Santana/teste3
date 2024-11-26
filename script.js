@@ -22,6 +22,37 @@ document.querySelectorAll('input').forEach(input => {
     });
 });
 
+
+// Função para capitalizar palavras
+function capitalizeWords(input) {
+    input.value = input.value.replace(/\b(\p{L})(\p{L}*)/gu, (match, firstLetter, restOfWord) => {
+        return firstLetter.toUpperCase() + restOfWord.toLowerCase();
+    });
+}
+
+// Função para forçar a revalidação
+function forceValidation(input) {
+    const regex = /^[A-Za-zÀ-ÿ\s'-]*$/; // Mesmo pattern do HTML
+    if (!regex.test(input.value)) {
+        input.setCustomValidity("Insira apenas letras, espaços, apóstrofos ou hifens.");
+    } else {
+        input.setCustomValidity(""); // Campo válido
+    }
+}
+
+// Seleciona os campos
+const nomeInput = document.getElementById('nome');
+const sobrenomeInput = document.getElementById('sobrenome');
+
+// Aplica a capitalização e força a validação durante a digitação
+[nomeInput, sobrenomeInput].forEach(input => {
+    input.addEventListener('input', () => {
+        capitalizeWords(input);
+        forceValidation(input);
+    });
+});
+
+
 document.getElementById("formulario").addEventListener("submit", function (event) {
     const checkboxes = document.querySelectorAll('input[name="tecnologias"]');
     const erroDiv = document.getElementById("erro");
@@ -55,3 +86,16 @@ document.querySelectorAll('input[name="tecnologias"]').forEach(checkbox => {
     });
 });
 
+
+document.addEventListener("input", () => {
+    const form = document.getElementById("formulario");
+    const button = document.querySelector(".btn");
+    
+    // Verifica se o formulário é válido e se pelo menos uma tecnologia foi selecionada
+    const tecnologiasSelecionadas = Array.from(form.querySelectorAll("input[name='tecnologias']:checked")).length > 0;
+    const isValid = form.checkValidity() && tecnologiasSelecionadas;
+
+    // Alterna a visibilidade do botão
+    button.style.opacity = isValid ? "1" : "0.2";
+    button.style.pointerEvents = isValid ? "auto" : "none";
+});
