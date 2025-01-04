@@ -1,4 +1,7 @@
-main, form, .campo {
+main,
+form,
+.campo,
+.campo-nome {
     display: flex;
     flex-direction: column;
 }
@@ -14,18 +17,17 @@ main {
     font-family: sans-serif;
 }
 
-.keyboard-navigation :is(
-    input[type="radio"], input[type="checkbox"], .btn, select
-):focus {
+.keyboard-navigation :is(input[type="radio"], input[type="checkbox"], .form-button, select):focus {
     outline: 2px solid var(--standard-color);
     outline-offset: 1.5px;
 }
 
-.campo-text {
+.form__header{
     text-align: center;
 }
 
-.campo-text .titulo, .subtitulo {
+.form-header .titulo,
+.subtitulo {
     color: #380861;
 }
 
@@ -34,10 +36,19 @@ form {
 }
 
 @keyframes shake {
-    25% { transform: translateX(5px);}
-    50% { transform: translateX(-4px);}
-    75% { transform: translateX(4px);}
+    25% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
 }
+
 input:invalid:not(:placeholder-shown):not(input[type="email"]):not(:autofill),
 input[type="email"]:invalid:not(:placeholder-shown):not(:focus) {
     animation: shake 300ms;
@@ -46,10 +57,8 @@ input[type="email"]:invalid:not(:placeholder-shown):not(:focus) {
     border-color: var(--red);
 }
 
-.campo:has(
-    input:invalid:not(:placeholder-shown):not(input[type="email"]):not(:autofill),
-    input[type="email"]:invalid:not(:placeholder-shown):not(:focus)
-) label {
+.campo:has(input:invalid:not(:placeholder-shown):not(input[type="email"]):not(:autofill),
+    input[type="email"]:invalid:not(:placeholder-shown):not(:focus)) label {
     color: var(--red);
 }
 
@@ -68,24 +77,31 @@ textarea:is(:focus, :valid) {
     transition: 0.3s ease-in-out;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     padding: 3px;
-    border-radius: 5px;
     border: solid 1px var(--standard-color);
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-fieldset {
-    display: flex;
+.campo-nome {
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;
 }
 
+.select-container,
 select {
     align-self: flex-start;
+}
+
+select {
     background-color: #ffffff;
     transition: 0.2s ease-in-out;
 }
+
 select:hover {
     background-color: var(--focus);
 }
@@ -94,12 +110,8 @@ select option[value=""] {
     display: none;
 }
 
-.senioridade {
-    align-self: flex-start;
-}
-
-select option:hover {
-    background-color: rebeccapurple;
+.erro {
+    color: var(--red);
 }
 
 .campo textarea {
@@ -108,31 +120,29 @@ select option:hover {
     font-family: Arial, sans-serif;
 }
 
-.erro {
-    color: var(--red);
-}
-
-.btn {
-	padding: 5px 15px;
-	border-radius: 6px;
+.form-button {
+    padding: 5px 15px;
+    border-radius: 6px;
     align-self: center;
-	background: linear-gradient(to bottom, #a370cd 5%, var(--standard-color) 100%);
-	color:#ffffff;
-	border: 1px solid #c584f3;
+    background: linear-gradient(to bottom, #a370cd 5%, var(--standard-color) 100%);
+    color: #ffffff;
+    border: 1px solid #c584f3;
     cursor: pointer;
     pointer-events: none;
     transition: 0.3s ease;
     opacity: 0.2;
 }
-.btn:hover {
+
+.form-button:hover {
     background: linear-gradient(to bottom, var(--standard-color) 5%, #cba6e9 100%);
 }
-.btn:active {
-	position:relative;
-	top: 1px;
+
+.form-button:active {
+    position: relative;
+    top: 1px;
 }
 
-form:valid .btn {
+form:valid .form-button {
     pointer-events: auto;
     opacity: 1;
 }

@@ -9,6 +9,7 @@ document.addEventListener('mousedown', () => {
 });
 
 
+
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', () => {
         if (input.checkValidity() === false) {
@@ -20,7 +21,8 @@ document.querySelectorAll('input').forEach(input => {
             }, 0);
         }
     });
-});
+}); 
+
 
 
 // Função para capitalizar palavras
@@ -28,16 +30,6 @@ function capitalizeWords(input) {
     input.value = input.value.replace(/\b(\p{L})(\p{L}*)/gu, (match, firstLetter, restOfWord) => {
         return firstLetter.toUpperCase() + restOfWord.toLowerCase();
     });
-}
-
-// Função para forçar a revalidação
-function forceValidation(input) {
-    const regex = /^[A-Za-zÀ-ÿ\s'-]*$/; // Mesmo pattern do HTML
-    if (!regex.test(input.value)) {
-        input.setCustomValidity("Insira apenas letras, espaços, apóstrofos ou hifens.");
-    } else {
-        input.setCustomValidity(""); // Campo válido
-    }
 }
 
 // Seleciona os campos
@@ -51,6 +43,18 @@ const sobrenomeInput = document.getElementById('sobrenome');
         forceValidation(input);
     });
 });
+
+// Função para forçar a revalidação
+function forceValidation(input) {
+    const regex = /^[A-Za-zÀ-ÿ\s'-]*$/; // Mesmo pattern do HTML
+    if (!regex.test(input.value)) {
+        input.setCustomValidity("Insira apenas letras, espaços, apóstrofos ou hifens.");
+    } else {
+        input.setCustomValidity(""); // Campo válido
+    }
+    input.reportValidity(); // Exibe a mensagem de erro personalizada (se houver)
+}
+
 
 
 document.getElementById("formulario").addEventListener("submit", function (event) {
@@ -87,9 +91,10 @@ document.querySelectorAll('input[name="tecnologias"]').forEach(checkbox => {
 });
 
 
+
 document.addEventListener("input", () => {
     const form = document.getElementById("formulario");
-    const button = document.querySelector(".btn");
+    const button = document.querySelector(".form-button");
     
     // Verifica se o formulário é válido e se pelo menos uma tecnologia foi selecionada
     const tecnologiasSelecionadas = Array.from(form.querySelectorAll("input[name='tecnologias']:checked")).length > 0;

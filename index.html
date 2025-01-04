@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="Pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
@@ -11,32 +12,36 @@
     <link rel="stylesheet" href="./src/css/variables.css">
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
+
 <body>
     <main>
-        <div class="campo-text">
+        <div class="form-header">
             <h1 class="titulo">Cadastro de DEVs</h1>
             <p class="subtitulo">Complete suas informações</p>
         </div>
 
         <form id="formulario" action="./index.html" method="get">
-            <fieldset>
+            <fieldset class="campo-nome">
                 <div class="campo">
                     <label for="nome">Nome</label>
-                    <input id="nome" type="text" name="nome" autofocus placeholder="Digite seu nome" pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="20" required aria-required="true">
+                    <input id="nome" type="text" name="nome" autofocus placeholder="Digite seu nome"
+                        pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="20" required aria-required="true">
                 </div>
                 <div class="campo">
                     <label for="sobrenome">Sobrenome</label>
-                    <input id="sobrenome" type="text" name="sobrenome" placeholder="Digite seu sobrenome" pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="40" required aria-required="true">
+                    <input id="sobrenome" type="text" name="sobrenome" placeholder="Digite seu sobrenome"
+                        pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="40" required aria-required="true">
                 </div>
             </fieldset>
 
             <div class="campo">
                 <label for="e-mail">E-mail</label>
-                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" maxlength="254" required aria-required="true">
+                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" maxlength="254" required
+                    aria-required="true">
             </div>
 
-            <div>
-                <label>De qual lado da aplicação você desenvolve?</label><br>
+            <fieldset>
+                <legend>De qual lado da aplicação você desenvolve?</legend><br>
 
                 <input id="frontend" type="radio" name="dev" checked>
                 <label for="frontend">Front-end</label><br>
@@ -44,9 +49,9 @@
                 <label for="backend">Back-end</label><br>
                 <input id="fullstack" type="radio" name="dev">
                 <label for="fullstack">FullStack</label>
-            </div>
+            </fieldset>
 
-            <div class="campo senioridade">
+            <div class="campo select-container">
                 <label for="senioridade">Senioridade</label>
                 <select id="senioridade" name="senioridade" required aria-required="true">
                     <option value="" disabled selected>Selecione</option>
@@ -59,29 +64,31 @@
             <div>
                 <label>Selecione as tecnologias que você utiliza<strong>:</strong></label><br><br>
 
-                <div id="erro" class="erro"></div>
-                
-                <input id="html" type="checkbox" name="tecnologias">
+                <div id="erro" class="erro" aria-live="polite"></div>
+
+                <input id="html" type="checkbox" name="tecnologias" aria-describedby="erro">
                 <label for="html">HTML</label>
-                <input id="css" type="checkbox" name="tecnologias">
+                <input id="css" type="checkbox" name="tecnologias" aria-describedby="erro">
                 <label for="css">CSS</label>
-                <input id="javascript" type="checkbox" name="tecnologias">
+                <input id="javascript" type="checkbox" name="tecnologias" aria-describedby="erro">
                 <label for="javascript">JavaScript</label>
-                <input id="php" type="checkbox" name="tecnologias">
+                <input id="php" type="checkbox" name="tecnologias" aria-describedby="erro">
                 <label for="php">PHP</label>
-                <input id="python" type="checkbox" name="tecnologias">
+                <input id="python" type="checkbox" name="tecnologias" aria-describedby="erro">
                 <label for="python">Python</label>
             </div>
 
             <div class="campo">
                 <label for="experiencia">Conte um pouco da sua experiência<strong>:</strong></label>
-                <textarea rows="6" maxlength="500" name="experiencia" id="experiencia" required aria-required="true"></textarea>
+                <textarea rows="6" maxlength="500" name="experiencia" id="experiencia" required
+                    aria-required="true"></textarea>
             </div>
 
-            <button class="btn" type="submit">Concluído</button>
+            <button class="form-button" type="submit">Concluído</button>
         </form>
     </main>
 
     <script src="./script.js"></script>
 </body>
+
 </html>
