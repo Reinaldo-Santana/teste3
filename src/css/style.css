@@ -22,13 +22,18 @@ main {
     outline-offset: 1.5px;
 }
 
-.form-header{
+.form-header {
     text-align: center;
 }
 
 .form-header .titulo,
 .subtitulo {
     color: #380861;
+}
+
+.form-header .subtitulo {
+    font-size: 16px;
+    font-weight: normal;
 }
 
 form {
@@ -118,6 +123,10 @@ select option[value=""] {
     resize: none;
     font-size: 12pt;
     font-family: Arial, sans-serif;
+}
+
+.campo textarea::placeholder {
+    opacity: .7;
 }
 
 .form-button {

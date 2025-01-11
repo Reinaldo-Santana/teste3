@@ -91,14 +91,35 @@ document.querySelectorAll('input[name="tecnologias"]').forEach(checkbox => {
 });
 
 
-
-document.addEventListener("input", () => {
+document.addEventListener("input", (event) => {
     const form = document.getElementById("formulario");
     const button = document.querySelector(".form-button");
-    
+    const textarea = document.getElementById("experiencia");
+
+    // Verifica se o evento de input ocorreu no campo <textarea>
+    if (event.target === textarea) {
+        const text = textarea.value;
+
+        // Ajusta a primeira letra para maiúscula sem interferir na validação
+        if (text.length > 0) {
+            const caretPosition = textarea.selectionStart; // Salva a posição do cursor
+            const formattedText = text.charAt(0).toUpperCase() + text.slice(1);
+            textarea.value = formattedText;
+
+            // Restaura a posição do cursor para evitar problemas ao digitar
+            textarea.setSelectionRange(caretPosition, caretPosition);
+        }
+    }
+
     // Verifica se o formulário é válido e se pelo menos uma tecnologia foi selecionada
-    const tecnologiasSelecionadas = Array.from(form.querySelectorAll("input[name='tecnologias']:checked")).length > 0;
-    const isValid = form.checkValidity() && tecnologiasSelecionadas;
+    const tecnologiasSelecionadas = Array.from(
+        form.querySelectorAll("input[name='tecnologias']:checked")
+    ).length > 0;
+
+    const isValid =
+        form.checkValidity() &&
+        tecnologiasSelecionadas &&
+        textarea.value.length >= parseInt(textarea.getAttribute("minlength"), 10);
 
     // Alterna a visibilidade do botão
     button.style.opacity = isValid ? "1" : "0.2";
