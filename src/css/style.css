@@ -12,7 +12,7 @@ form,
 
 .home {
     min-height: 100dvh;
-    padding-inline: 3%;
+    padding: 5% 3%;
     align-items: center;
     justify-content: center;
     gap: 2rem;
@@ -21,7 +21,7 @@ form,
     font-family: sans-serif;
 }
 
-.keyboard-navigation :is(input[type="radio"], input[type="checkbox"], .form-button, select):focus {
+:is(input[type="radio"], input[type="checkbox"], .form-button, select):focus-visible {
     outline: 2px solid var(--standard-color);
     outline-offset: 1.5px;
 }
