@@ -12,7 +12,6 @@ form,
 
 .home {
     min-height: 100dvh;
-    padding: 5% 3%;
     align-items: center;
     justify-content: center;
     gap: 2rem;
@@ -162,4 +161,10 @@ select option[value=""] {
 form:valid .form-button {
     pointer-events: auto;
     opacity: 1;
+}
+
+@media (width <=576px) {
+    .home {
+        padding: 5% 3%;
+    }
 }
