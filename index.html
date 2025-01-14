@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="description" content="Formulário de cadastro de desenvolvedores. Complete suas informações e selecione as tecnologias que utiliza.">
+    <meta name="theme-color" content="#f0f8ff">
     <title>Formulário de cadastro</title>
 
     <link rel="shortcut icon" href="./src/images/favicon.ico" type="image/x-icon">
@@ -14,7 +16,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="home">
         <div class="form-header">
             <h1 class="titulo">Cadastro de DEVs</h1>
             <h2 class="subtitulo">Complete suas informações</h2>
@@ -25,20 +27,19 @@
                 <div class="campo">
                     <label for="nome">Nome</label>
                     <input id="nome" type="text" name="nome" autofocus placeholder="Digite seu nome"
-                        pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="20" required aria-required="true">
+                        pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="20" required>
                 </div>
                 
                 <div class="campo">
                     <label for="sobrenome">Sobrenome</label>
                     <input id="sobrenome" type="text" name="sobrenome" placeholder="Digite seu sobrenome"
-                        pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="40" required aria-required="true">
+                        pattern="[a-zA-ZÀ-ÿ\s'-]*" maxlength="40" required>
                 </div>
             </fieldset>
 
             <div class="campo">
                 <label for="e-mail">E-mail</label>
-                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" maxlength="254" required
-                    aria-required="true">
+                <input id="e-mail" type="email" name="email" placeholder="Digite seu email" maxlength="254" required>
             </div>
 
             <fieldset>
@@ -56,7 +57,7 @@
 
             <div class="campo select-container">
                 <label for="senioridade">Senioridade</label>
-                <select id="senioridade" name="senioridade" required aria-required="true">
+                <select id="senioridade" name="senioridade" required>
                     <option value="" disabled selected>Selecione</option>
                     <option value="Júnior">Júnior</option>
                     <option value="Pleno">Pleno</option>
@@ -87,15 +88,14 @@
 
             <div class="campo">
                 <label for="experiencia">Conte um pouco da sua experiência<strong>:</strong></label>
-                <textarea rows="6" minlength="25" maxlength="500" name="experiencia" id="experiencia" placeholder="Descreva sua experiência profissional, incluindo cargos, responsabilidades e realizações mais relevantes." required
-                    aria-required="true"></textarea>
+                <textarea rows="6" minlength="25" maxlength="500" name="experiencia" id="experiencia" placeholder="Descreva sua experiência profissional, incluindo cargos, responsabilidades e realizações mais relevantes." required></textarea>
             </div>
 
-            <button class="form-button" type="submit">Concluído</button>
+            <button class="form-button" type="submit" aria-label="Enviar formulário de cadastro">Concluído</button>
         </form>
     </main>
 
-    <script src="./script.js"></script>
+    <script src="./src/js/script.js"></script>
 </body>
 
 </html>

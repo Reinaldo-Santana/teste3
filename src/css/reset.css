@@ -4,25 +4,26 @@
     box-sizing: border-box;
     border: none;
     outline: none;
+    font-size: 1.6rem;
 }
 
 input[type="radio"] {
     appearance: none;
     border: solid 1px #7d66c1;
     border-radius: 50%;
-    width: 12px;
-    height: 12px;
+    width: 1.2rem;
+    height: 1.2rem;
     position: relative;
 }
 input[type="radio"]::before {
     content: '';
     background-color: #380861;
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 0.6rem;
+    height: 0.6rem;
     border-radius: 50%;
-    top: 2px;
-    left: 2px;
+    top: 0.2rem;
+    left: 0.2rem;
     opacity: 0;
     transition: 0.2s ease-in-out;
 }
@@ -30,8 +31,8 @@ input[type="radio"]::before {
 input[type="checkbox"] {
     appearance: none;
     border: solid 1px #7d66c1;
-    width: 13px;
-    height: 13px;
+    width: 1.3rem;
+    height: 1.3rem;
     position: relative;
     border-radius: 0;
 }
@@ -40,10 +41,10 @@ input[type="checkbox"]::before {
     border-right: solid 2px #380861;
     border-bottom: solid 2px #380861;
     position: absolute;
-    width: 4px;
-    height: 7px;
-    bottom: 2px;
-    right: 2px;;
+    width: 0.4rem;
+    height: 0.7rem;
+    bottom: 0.2rem;
+    right: 0.2rem;;
     opacity: 0;
     transform: rotate(45deg);
 }

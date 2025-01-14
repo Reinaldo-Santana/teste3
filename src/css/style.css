@@ -1,4 +1,8 @@
-main,
+html {
+    font-size: 62.5%;
+}
+
+.home,
 form,
 .campo,
 .campo-nome {
@@ -6,12 +10,12 @@ form,
     flex-direction: column;
 }
 
-main {
+.home {
     min-height: 100dvh;
     padding-inline: 3%;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 2rem;
     background-color: #f0f8ff;
     color: var(--standard-color);
     font-family: sans-serif;
@@ -31,13 +35,17 @@ main {
     color: #380861;
 }
 
+.form-header .titulo {
+    font-size: 3.2rem;
+}
+
 .form-header .subtitulo {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: normal;
 }
 
 form {
-    gap: 15px;
+    gap: 1.5rem;
 }
 
 @keyframes shake {
@@ -85,7 +93,7 @@ textarea:is(:focus, :valid) {
 input,
 select,
 textarea {
-    padding: 3px;
+    padding: 0.3rem;
     border: solid 1px var(--standard-color);
     border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -94,7 +102,7 @@ textarea {
 .campo-nome {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 1.5rem;
 }
 
 .select-container,
@@ -126,16 +134,16 @@ select option[value=""] {
 }
 
 .campo textarea::placeholder {
-    opacity: .7;
+    opacity: 0.7;
 }
 
 .form-button {
-    padding: 5px 15px;
-    border-radius: 6px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.6rem;
     align-self: center;
     background: linear-gradient(to bottom, #a370cd 5%, var(--standard-color) 100%);
     color: #ffffff;
-    border: 1px solid #c584f3;
+    border: 0.1rem solid #c584f3;
     cursor: pointer;
     pointer-events: none;
     transition: 0.3s ease;
@@ -148,7 +156,7 @@ select option[value=""] {
 
 .form-button:active {
     position: relative;
-    top: 1px;
+    top: 0.1rem;
 }
 
 form:valid .form-button {
