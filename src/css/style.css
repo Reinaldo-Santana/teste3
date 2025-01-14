@@ -20,7 +20,7 @@ form,
     font-family: sans-serif;
 }
 
-:is(input[type="radio"], input[type="checkbox"], .form-button, select):focus-visible {
+.keyboard-navigation :is(input[type="radio"], input[type="checkbox"], .form-button, select):focus {
     outline: 2px solid var(--standard-color);
     outline-offset: 1.5px;
 }

@@ -1,3 +1,15 @@
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
+    }
+});
+
+document.addEventListener('mousedown', () => {
+    document.body.classList.remove('keyboard-navigation');
+});
+
+
+
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', () => {
         if (input.checkValidity() === false) {
