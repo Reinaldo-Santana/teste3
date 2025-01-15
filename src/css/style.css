@@ -34,14 +34,17 @@ form,
     color: #380861;
 }
 
-.form-header .titulo {
-    font-size: 3.2rem;
+.form-header {
+    .titulo {
+        font-size: 3.2rem;
+    }
+
+    .subtitulo {
+        font-size: 1.6rem;
+        font-weight: normal;
+    }
 }
 
-.form-header .subtitulo {
-    font-size: 1.6rem;
-    font-weight: normal;
-}
 
 form {
     gap: 1.5rem;
@@ -126,14 +129,16 @@ select option[value=""] {
     color: var(--red);
 }
 
-.campo textarea {
-    resize: none;
-    font-size: 12pt;
-    font-family: Arial, sans-serif;
-}
+.campo {
+    textarea {
+        resize: none;
+        font-size: 12pt;
+        font-family: Arial, sans-serif;
 
-.campo textarea::placeholder {
-    opacity: 0.7;
+        &::placeholder {
+            opacity: 0.7;
+        }
+    }
 }
 
 .form-button {
@@ -147,15 +152,15 @@ select option[value=""] {
     pointer-events: none;
     transition: 0.3s ease;
     opacity: 0.2;
-}
 
-.form-button:hover {
-    background: linear-gradient(to bottom, var(--standard-color) 5%, #cba6e9 100%);
-}
+    &:hover {
+        background: linear-gradient(to bottom, var(--standard-color) 5%, #cba6e9 100%);
+    }
 
-.form-button:active {
-    position: relative;
-    top: 0.1rem;
+    &:active {
+        position: relative;
+        top: 0.1rem;
+    }
 }
 
 form:valid .form-button {
