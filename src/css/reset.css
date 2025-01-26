@@ -38,13 +38,13 @@ input[type="checkbox"] {
 }
 input[type="checkbox"]::before {
     content: '';
-    border-right: solid 2px #380861;
-    border-bottom: solid 2px #380861;
+    border-right: solid 0.2rem #380861;
+    border-bottom: solid 0.2rem #380861;
     position: absolute;
     width: 0.4rem;
     height: 0.7rem;
     bottom: 0.2rem;
-    right: 0.2rem;;
+    right: 0.2rem;
     opacity: 0;
     transform: rotate(45deg);
 }

@@ -2,52 +2,19 @@ html {
     font-size: 62.5%;
 }
 
-.home,
-form,
-.campo,
-.campo-nome {
-    display: flex;
-    flex-direction: column;
+:root {
+    --red: #ff0000;
+    --standard-color: #59429d;
+    --focus: #E8F0FE;
 }
 
-.home {
-    min-height: 100dvh;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    background-color: #f0f8ff;
-    color: var(--standard-color);
-    font-family: sans-serif;
-}
-
-.keyboard-navigation :is(input[type="radio"], input[type="checkbox"], .form-button, select):focus {
-    outline: 2px solid var(--standard-color);
-    outline-offset: 1.5px;
-}
-
-.form-header {
-    text-align: center;
-}
-
-.form-header .titulo,
-.subtitulo {
-    color: #380861;
-}
-
-.form-header {
-    .titulo {
-        font-size: 3.2rem;
-    }
-
-    .subtitulo {
-        font-size: 1.6rem;
-        font-weight: normal;
-    }
-}
-
-
-form {
-    gap: 1.5rem;
+.keyboard-navigation :is(
+    form input:is([type="radio"], [type="checkbox"]),
+    form .form-button,
+    form select
+):focus {
+    outline: 0.2rem solid var(--standard-color);
+    outline-offset: 0.15rem;
 }
 
 @keyframes shake {
@@ -64,108 +31,141 @@ form {
     }
 }
 
-input:invalid:not(:placeholder-shown):not(input[type="email"]):not(:autofill),
-input[type="email"]:invalid:not(:placeholder-shown):not(:focus) {
-    animation: shake 300ms;
-    background-color: #ffffff;
-    color: var(--red);
-    border-color: var(--red);
+.home,
+.home form,
+.home form :is(.campo-nome, .campo) {
+    display: flex;
+    flex-direction: column;
 }
 
-.campo:has(input:invalid:not(:placeholder-shown):not(input[type="email"]):not(:autofill),
-    input[type="email"]:invalid:not(:placeholder-shown):not(:focus)) label {
-    color: var(--red);
-}
+.home {
+    min-height: 100dvh;
+    padding-block: 0.6%;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #f0f8ff;
+    color: var(--standard-color);
+    font-family: sans-serif;
 
-/* ANTES */
+    .form-header {
+        text-align: center;
 
-/* input:is(:focus, :valid),
-select:is(:focus, :valid),
-textarea:is(:focus, :valid) {
-    background-color: var(--focus);
-    transition: 0.3s ease-in-out;
-} */
+        .titulo,
+        .subtitulo {
+            color: #380861;
+        }
 
-/* DEPOIS */
-:is(input, select, textarea):is(:focus, :valid) {
-    background-color: var(--focus);
-    transition: 0.3s ease-in-out;
-}
+        .titulo {
+            font-size: 3.2rem;
+        }
 
-input,
-select,
-textarea {
-    padding: 0.3rem;
-    border: solid 1px var(--standard-color);
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-.campo-nome {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.select-container,
-select {
-    align-self: flex-start;
-}
-
-select {
-    background-color: #ffffff;
-    transition: 0.2s ease-in-out;
-}
-
-select:hover {
-    background-color: var(--focus);
-}
-
-select option[value=""] {
-    display: none;
-}
-
-.erro {
-    color: var(--red);
-}
-
-.campo {
-    textarea {
-        resize: none;
-        font-size: 12pt;
-        font-family: Arial, sans-serif;
-
-        &::placeholder {
-            opacity: 0.7;
+        .subtitulo {
+            font-weight: normal;
         }
     }
-}
 
-.form-button {
-    padding: 0.5rem 1.5rem;
-    border-radius: 0.6rem;
-    align-self: center;
-    background: linear-gradient(to bottom, #a370cd 5%, var(--standard-color) 100%);
-    color: #ffffff;
-    border: 0.1rem solid #c584f3;
-    cursor: pointer;
-    pointer-events: none;
-    transition: 0.3s ease;
-    opacity: 0.2;
+    form {
+        gap: 1.5rem;
 
-    &:hover {
-        background: linear-gradient(to bottom, var(--standard-color) 5%, #cba6e9 100%);
+        input,
+        select,
+        textarea {
+            padding: 0.3rem;
+            border: solid 1px var(--standard-color);
+            border-radius: 0.5rem;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="checkbox"]{
+            border-radius: 0;
+        }
+
+        :is(input, .select-container select, textarea):is(:focus, :valid) {
+            background-color: var(--focus);
+            transition: 0.3s ease-in-out;
+        }
+
+        input:invalid:not(:placeholder-shown):not(input[type="email"]):not(:autofill),
+        input:invalid[type="email"]:not(:placeholder-shown):not(:focus) {
+            animation: shake 300ms;
+            background-color: #ffffff;
+            color: var(--red);
+            border-color: var(--red);
+        }
+
+        .campo {
+            &:has(input:invalid:not(:placeholder-shown):not(input[type="email"]):not(:autofill),
+                input[type="email"]:invalid:not(:placeholder-shown):not(:focus)) label {
+                color: var(--red);
+            }
+
+            textarea {
+                resize: none;
+                font-size: 12pt;
+                font-family: Arial, sans-serif;
+
+                &::placeholder {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        .campo-nome {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+
+        .select-container {
+            align-self: flex-start;
+
+            select {
+                background-color: #ffffff;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: var(--focus);
+                }
+
+                option[value=""] {
+                    display: none;
+                }
+            }
+        }
+
+        .erro {
+            color: var(--red);
+        }
+
+        .form-button {
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.6rem;
+            align-self: center;
+            background: linear-gradient(to bottom, #a370cd 5%, var(--standard-color) 100%);
+            color: #ffffff;
+            border: 0.1rem solid #c584f3;
+            cursor: pointer;
+            pointer-events: none;
+            transition: 0.3s ease;
+            opacity: 0.2;
+
+            &:hover {
+                background: linear-gradient(to bottom, var(--standard-color) 5%, #cba6e9 100%);
+            }
+
+            &:active {
+                position: relative;
+                top: 0.1rem;
+            }
+
+            &:enabled {
+                opacity: 1; 
+                pointer-events: auto;
+            }
+        }
     }
-
-    &:active {
-        position: relative;
-        top: 0.1rem;
-    }
-}
-
-form:valid .form-button {
-    pointer-events: auto;
-    opacity: 1;
 }
 
 @media (width <=576px) {

@@ -10,6 +10,7 @@ document.addEventListener('mousedown', () => {
 
 
 
+
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', () => {
         if (input.checkValidity() === false) {
@@ -22,6 +23,7 @@ document.querySelectorAll('input').forEach(input => {
         }
     });
 }); 
+
 
 
 
@@ -54,6 +56,7 @@ function forceValidation(input) {
     }
     input.reportValidity(); // Exibe a mensagem de erro personalizada (se houver)
 }
+
 
 
 
@@ -91,6 +94,8 @@ document.querySelectorAll('input[name="tecnologias"]').forEach(checkbox => {
 });
 
 
+
+
 document.addEventListener("input", (event) => {
     const form = document.getElementById("formulario");
     const button = document.querySelector(".form-button");
@@ -122,6 +127,5 @@ document.addEventListener("input", (event) => {
         textarea.value.length >= parseInt(textarea.getAttribute("minlength"), 10);
 
     // Alterna a visibilidade do botão
-    button.style.opacity = isValid ? "1" : "0.2";
-    button.style.pointerEvents = isValid ? "auto" : "none";
+    button.disabled = !isValid;
 });
